@@ -2,7 +2,7 @@
   "name": "state-medicaid-dashboard",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://daphnehansell.github.io/state-medicaid-dashboard",
+  "homepage": "https://policyengine.github.io/state-medicaid-dashboard",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
