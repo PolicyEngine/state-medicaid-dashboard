@@ -154,9 +154,9 @@ const MedicaidReformDashboard = () => {
   return (
     <div className="min-h-screen relative" style={{ backgroundColor: colors.BLUE_98 }}>
       {/* Demo Watermark */}
-      <div className="fixed top-4 right-4 z-50 bg-red-600 text-white px-3 py-2 rounded-lg shadow-lg opacity-90">
-        <div className="text-sm font-bold">DEMO ONLY</div>
-        <div className="text-xs">Not real data</div>
+      <div className="fixed top-4 right-4 z-50 bg-red-600 text-white px-4 py-3 rounded-lg shadow-lg opacity-90">
+        <div className="text-lg font-bold">DEMO ONLY</div>
+        <div className="text-sm">Not real data</div>
       </div>
       
       <div className="max-w-7xl mx-auto p-4">
