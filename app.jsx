@@ -439,11 +439,12 @@ const MedicaidReformDashboard = () => {
                   data={fundingData}
                   cx="50%"
                   cy="50%"
-                  labelLine={false}
+                  labelLine={true}
                   label={({ name, value }) => `${name}: ${value.toFixed(1)}B`}
-                  outerRadius={80}
+                  outerRadius={70}
                   fill="#8884d8"
                   dataKey="value"
+                  startAngle={90}
                 >
                   {fundingData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
