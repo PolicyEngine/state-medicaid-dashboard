@@ -152,7 +152,13 @@ const MedicaidReformDashboard = () => {
   const COLORS = [colors.DARK_RED, colors.BLUE_PRIMARY, colors.GREEN, colors.GRAY];
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: colors.BLUE_98 }}>
+    <div className="min-h-screen relative" style={{ backgroundColor: colors.BLUE_98 }}>
+      {/* Demo Watermark */}
+      <div className="fixed top-4 right-4 z-50 bg-red-600 text-white px-3 py-2 rounded-lg shadow-lg opacity-90">
+        <div className="text-sm font-bold">DEMO ONLY</div>
+        <div className="text-xs">Not real data</div>
+      </div>
+      
       <div className="max-w-7xl mx-auto p-4">
         <h1 className="text-3xl font-bold mb-6" style={{ color: colors.DARKEST_BLUE }}>Medicaid Reform Modeling Dashboard</h1>
         
