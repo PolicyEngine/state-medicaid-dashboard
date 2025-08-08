@@ -129,13 +129,13 @@ const MedicaidReformDashboard = () => {
   const workReqAffected = stateInfo.medicaidEnrollment * workReqReduction * 1000000;
   const totalAffected = eligibilityAffected + workReqAffected;
   
-  // Pie chart data
+  // Pie chart data - only include SNAP if it's toggled
   const fundingData = [
     { name: 'Federal Loss', value: Math.max(0, baseFundingLoss - totalSavings) },
     { name: 'State Revenue', value: totalRevenue },
     { name: 'Program Savings', value: totalSavings },
-    { name: 'SNAP Costs', value: snapCosts }
-  ];
+    ...(snapCostSharing && snapCosts > 0 ? [{ name: 'SNAP Costs', value: snapCosts }] : [])
+  ].filter(item => item.value > 0); // Only show items with positive values
   
   // Bar chart data
   const enrollmentData = [
@@ -439,12 +439,13 @@ const MedicaidReformDashboard = () => {
                   data={fundingData}
                   cx="50%"
                   cy="50%"
-                  labelLine={true}
-                  label={({ name, value }) => `${name}: ${value.toFixed(1)}B`}
+                  labelLine={false}
+                  label={({ name, value, percent }) => value > 0 ? `${name}: $${value.toFixed(1)}B` : ''}
                   outerRadius={70}
                   fill="#8884d8"
                   dataKey="value"
                   startAngle={0}
+                  minAngle={15}
                 >
                   {fundingData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
