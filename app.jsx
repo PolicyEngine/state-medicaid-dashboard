@@ -444,7 +444,7 @@ const MedicaidReformDashboard = () => {
                   outerRadius={70}
                   fill="#8884d8"
                   dataKey="value"
-                  startAngle={90}
+                  startAngle={0}
                 >
                   {fundingData.map((entry, index) => (
                     <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
